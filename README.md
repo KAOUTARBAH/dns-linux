@@ -1,4 +1,3 @@
-# dns-linux
 # Configuration d'un serveur DNS sur Ubuntu avec Bind9
 
 - Configure la carte réseau de ta machine virtuelle en "Réseau Interne"
@@ -10,14 +9,14 @@
 
 ## Étapes de configuration
 
-### 1. Configuration de la carte réseau en "Réseau Interne"
+### Étape 1. Configuration de la carte réseau en "Réseau Interne"
 1. Arrêtez la VM.
 2. Ouvrez les paramètres de la VM dans VirtualBox .
 3. Allez dans **Réseau > Adaptateur 1**.
 4. Sélectionnez **Réseau Interne** comme mode d’attachement.
 5. Redémarrez la VM.
 
-### 2. Installer Bind9
+### Étape 2. Installer Bind9
 - Exécutez les commandes suivantes sur la VM (serveur DNS):
   ```bash
   sudo apt update
@@ -110,14 +109,14 @@ Avant de recharger la configuration, il est important de vérifier que le fichie
 ![test-enregCNAME](https://github.com/KAOUTARBAH/dns-linux/blob/main/images/test-enregCNAME.png)
 
 #### Tester depuis un autre client sur le même réseau local
-- Sur une autre machine configurée avec l'adresse IP 192.168.1.10 comme serveur DNS (vous pouvez modifier /etc/resolv.conf ou la configuration DHCP de cette machine), effectuez les tests suivants :
+- Sur une autre machine configurée avec l'adresse IP 172.20.0.3 comme serveur DNS (vous pouvez modifier /etc/resolv.conf ou la configuration DHCP de cette machine), effectuez les tests suivants :
 
 - Tester l'enregistrement A :
     ```bash
-    dig @192.168.1.10 rank.fr
+    dig @172.20.0.3 rank.fr
 ![test-enregA-clt](https://github.com/KAOUTARBAH/dns-linux/blob/main/images/test-enregA-clt.png)
 
 -Tester l'enregistrement CNAME :
     ```bash
-    dig @192.168.1.10 www.rank.fr
+    dig @172.20.0.3 www.rank.fr
 ![test-enregCNAME-clt](https://github.com/KAOUTARBAH/dns-linux/blob/main/images/test-enregCNAME-clt.png)
