@@ -116,7 +116,7 @@ Avant de recharger la configuration, il est important de vérifier que le fichie
     dig @172.20.0.3 rank.fr
 ![test-enregA-clt](https://github.com/KAOUTARBAH/dns-linux/blob/main/images/test-enregA-clt.png)
 
--Tester l'enregistrement CNAME :
+- Tester l'enregistrement CNAME :
     ```bash
     dig @172.20.0.3 www.rank.fr
 ![test-enregCNAME-clt](https://github.com/KAOUTARBAH/dns-linux/blob/main/images/test-enregCNAME-clt.png)
